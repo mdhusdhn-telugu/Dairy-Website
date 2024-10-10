@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Website</title>
+<link rel="stylesheet" href="Farming.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="logo">Madhu Dairy Delights</div>
+        </div>
+        <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar-menu">
+            <li class="navbar-item"><a href="index.html">Home</a></li>
+            <li class="navbar-item"><a href="produts.html"> Products</a></li>
+            <li class="navbar-item"><a href="#"> Login</a></li>
+            <li class="navbar-item"><a href="Help.html"> Contact</a></li>
+        </ul>        
+    </nav>
+    
+
+    <main>
+        <section id="motivation">
+            <h2 style="margin-top: 100px;">Join Our Community of Proud Dairy Farmers!</h2>
+            <p>At Madhu Dairy Delights, we believe in empowering farmers by providing a seamless platform to sell your milk. Enjoy timely pickups, fair market prices, and exceptional support. Opt for our services and watch your dairy business flourish!</p>
+        </section>
+        
+        <section id="registration">
+            <h2>Register to Sell Your Milk</h2>
+            <form id="registrationForm" onsubmit="handleSubmit(event)">
+                <label for="farmerName">Name:</label>
+                <input type="text" id="farmerName" name="farmerName" required><br><br>
+        
+                <label for="pickupTime">Preferred Pickup Time:</label>
+                <input type="text" id="pickupTime" name="pickupTime" placeholder="e.g., 5am - 9am" required><br><br>
+        
+                <label for="pickupLocation">Pickup Location:</label>
+                <select id="pickupLocation" name="pickupLocation" required>
+                    <option value=""></option>
+                    <option value="Nandyal">Nandyal</option>
+                    <option value="Kothapalli">Kothapalli</option>
+                    <option value="Bayyapu Kodur">Bayyapu Kodur</option>
+                    <option value="Ayyavari Kodur">Ayyavari Kodur</option>
+                    <option value="Mahanandi">Mahanandi</option>
+                </select>
+                <br><br>
+        
+                <button type="submit">Register</button>
+            </form>
+        </section>
+        
+        <div class="info-sections">
+            <section id="pickupInfo">
+                <h2>Pickup Information</h2>
+                <p>We provide pickup within 15 minutes of initiation at your location.</p>
+                <p>Cost for pickup within 5 km radius: ₹10</p>
+                <p>Market price applies to the cost of milk.</p>
+            </section>
+        
+            <section id="whyChooseUs">
+                <h2>Why Choose Us?</h2>
+                    <p>Reliable and timely pickup services.</p>
+                    <p>Competitive market prices for your milk.</p>
+                    <p>Easy and convenient registration process.</p>
+            </section>
+        </div>
+                <section id="testimonials">
+            <h2>What Our Farmers Say</h2>
+            <blockquote>
+                "Madhu Dairy Delights has transformed the way I sell my milk. The pickups are always on time, and I get fair prices consistently."
+                <cite>- Aarush, Nandyal</cite>
+            </blockquote>
+            <blockquote>
+                "Their support and services have helped me grow my dairy business tremendously. Highly recommend to all fellow farmers."
+                <cite>- Lakshmi, Koduru</cite>
+            </blockquote>
+        </section>
+            </main>
+
+
+
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-row">
+                        <div class="footer-col">
+                            <h4>Madhu Dairy Delights</h4>
+                            <p>Fresh and pure dairy products directly from our farm to your home.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="Help.html">About Us</a></li>
+                                <li><a href="produts.html#prod">Products</a></li>
+                                <li><a href="Help.html#contacts">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><a href="mailto:mdhusdhndegree@gmail.com">Email: info@madhudairydelights.com</a></li>
+                                <li><a href="tel:+919912949184">Phone: xxx-xxx-9184</a></li>
+                                <li><a href="https://maps.app.goo.gl/h4dwgjvVUANers3s6">Address: 5-116 Bayyapu Koduru, Nandyala, Andhra Pradesh</a></li>
+                            </ul>
+                        </div>
+                                        <div class="footer-col">
+                            <h4>Newsletter</h4>
+                            <form id="newsletter-form">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> Madhu Dairy Delights. All rights reserved.</p>
+                </div>
+            </footer>
+            
+            
+    <script>
+
+document.getElementById('mobile-menu').addEventListener('click', function() {
+    document.querySelector('.navbar-menu').classList.toggle('active');
+});
+
+
+        // JavaScript for form submission and validation (inline example)
+        function handleSubmit(event) {
+            event.preventDefault();
+            // Basic validation example
+            let farmerName = document.getElementById('farmerName').value.trim();
+            let pickupTime = document.getElementById('pickupTime').value.trim();
+            let pickupLocation = document.getElementById('pickupLocation').value.trim();
+
+            if (farmerName === '' || pickupTime === '' || pickupLocation === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate registration process (replace with actual backend interaction)
+            alert('Registration submitted successfully!\nName: ' + farmerName + '\nPickup Time: ' + pickupTime + '\nPickup Location: ' + pickupLocation);
+            document.getElementById('registrationForm').reset();
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
